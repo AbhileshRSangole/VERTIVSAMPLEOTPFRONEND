@@ -1,0 +1,19 @@
+<div>
+    <h2>OTP Generator and Validator</h2>
+    <label for="userId">User ID:</label>
+    <input id="userId" [(ngModel)]="userId" />
+    <button (click)="generateOTP()">Generate OTP</button>
+  
+    <div *ngIf="generatedPassword">
+      <p>Generated OTP: {{ generatedPassword }}</p>
+      <p>Time remaining: {{ remainingTime }} seconds</p>
+    </div>
+  
+    <label for="password">Enter OTP:</label>
+    <input id="password" [(ngModel)]="password" />
+    <button (click)="validateOTP()">Validate OTP</button>
+  
+    <p *ngIf="isValid">The OTP is valid!</p>
+    <p *ngIf="!isValid && generatedPassword">The OTP is invalid or expired.</p>
+  </div>
+  
